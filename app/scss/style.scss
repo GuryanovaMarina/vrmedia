@@ -193,14 +193,17 @@
    bottom: 80px;
    right: 0;
    padding-right: 150px;
+
    p:first-child {
       padding-bottom: 31px;
       font-size: 30px;
    }
+
    p {
       padding-bottom: 20px;
       font-size: 16px;
    }
+
    hr {
       margin: 31px 0;
       border: none;
@@ -208,33 +211,42 @@
       background-color: #282c33;
       height: 1px;
    }
+
    a {
       color: #f03382;
    }
+
    img {
       padding-left: 10px;
    }
-   /*position: relative;
-   -webkit-transition: all .3s;
-   transition: all .3s;
-   &:hover{
-      color: #f03382;
-      path{
-         fill: #f03382;
-      }
-   }
-   svg{
-      position: absolute;
-      left: -25px;
-      top: 5px;
-      path{
-         -webkit-transition: all .3s;
-         transition: all .3s;
-      }
-   }*/
-
 }
-
+  .header__telegram__2 {
+     position: absolute;
+     bottom: 120px;
+     background-color: #161616;
+     border-radius: 20px;
+     padding: 60px 100px;
+     width: 750px;
+      p:first-child {
+        color: #282c33;
+        font-size: 18px;
+     }
+     .header__telegram__2__div {
+         max-width: 40%;
+        p {
+           font-size: 20px;
+           color: #fff;
+           line-height: 1.5;
+           padding: 25px 0;
+        }
+        a {
+           color: #f03382;
+        }
+        img {
+           padding-left: 10px;
+        }
+     }
+  }
 .header__content{
    display: -webkit-box;
    display: flex;
