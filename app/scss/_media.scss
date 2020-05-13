@@ -48,8 +48,9 @@
    }
 }
 @media (max-width: 1800px){
-   .header__top{
-      padding: 0 100px;
+   .header__top,
+   .header__telegram{
+     padding: 0 100px;
    }
    // .problems__item{
    //    &:nth-child(4){
@@ -438,7 +439,8 @@
          margin-left: 20px;
       }
    }
-   .header__top{
+   .header__top,
+   .header__telegram{
       padding: 0 50px;
    }
 }
@@ -726,7 +728,8 @@
    .get__title{
       margin-right: 30px;
    }
-   .header__top{
+   .header__top,
+   .header__telegram{
       padding: 0 30px;
    }
    .about__earn-model{
@@ -1001,8 +1004,9 @@
    .header__details{
       left: 20px;
    }
-   .header__top{
-      padding: 0 20px;
+   .header__top,
+   .header__telegram{
+     padding: 0 20px;
    }
    .header__close{
       display: block;

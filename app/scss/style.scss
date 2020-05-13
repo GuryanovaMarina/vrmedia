@@ -188,8 +188,33 @@
       }
    }
 }
-.header__telegram{
-   position: relative;
+.header__telegram {
+   position: absolute;
+   bottom: 80px;
+   right: 0;
+   padding-right: 150px;
+   p:first-child {
+      padding-bottom: 31px;
+      font-size: 30px;
+   }
+   p {
+      padding-bottom: 20px;
+      font-size: 16px;
+   }
+   hr {
+      margin: 31px 0;
+      border: none;
+      color: #2f333a;
+      background-color: #282c33;
+      height: 1px;
+   }
+   a {
+      color: #f03382;
+   }
+   img {
+      padding-left: 10px;
+   }
+   /*position: relative;
    -webkit-transition: all .3s;
    transition: all .3s;
    &:hover{
@@ -206,7 +231,8 @@
          -webkit-transition: all .3s;
          transition: all .3s;
       }
-   }
+   }*/
+
 }
 
 .header__content{
