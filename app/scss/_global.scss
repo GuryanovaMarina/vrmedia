@@ -1,18 +1,18 @@
 @import 'vars';
 html,
 body {
-	height: 100%;
+    height: 100%;
 }
 .wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 .content {
-	flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 .footer {
-	flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 html{
     box-sizing: border-box;
@@ -82,14 +82,14 @@ p{
     display: inline-block;
 }
 .studio__title{
-   color: #1d2127;
-   font-size: 42px;
-   line-height: 50px;
+    color: #1d2127;
+    font-size: 42px;
+    line-height: 50px;
 }
 .studio__text{
     color: #525252;
-   font-size: 18px;
-   line-height: 32.01px;
+    font-size: 18px;
+    line-height: 32.01px;
 }
 .franchise-container{
     width: 100%;

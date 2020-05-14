@@ -1,3 +1,14 @@
+/*Const colors*/
+$light-grey: #a8aab3; /*#9a9da2*/ /*#667384*/
+$dark-grey: #525252;
+$black: #1d2127;
+$white :#ffffff;
+$pink: #f03382;
+$pink-dark: #cf367f;
+$pink-bg: #ffe1e7;
+$grey-blue :#afbcd0;
+
+/*Style text*/
 @mixin r400{
    font-family: 'Roboto', sans-serif;
    font-weight: 400;
@@ -5,4 +16,64 @@
 @mixin r700{
    font-family: 'Roboto', sans-serif;
    font-weight: 700;
+}
+@mixin title-white {
+   font-size: 50px;
+   line-height: 75px;
+   color: $white;
+}
+@mixin title-00-black {
+   font-size: 70px;
+   line-height: 75px;
+   color: $black;
+}
+@mixin title-0-black {
+   font-size: 60px;
+   line-height: 90px;
+   color: $black;
+}
+@mixin title-1-black {
+   font-size: 50px;
+   line-height: 75px;
+   color: $black;
+}
+@mixin title-white {
+   font-size: 30px;
+   line-height: 55px;
+   color: $white;
+}
+@mixin title-2-black {
+   font-size: 42px;
+   line-height: 56px;
+   color: $black;
+}
+@mixin title-3-black {
+   font-size: 36px;
+   line-height: 46px;
+   color: $black;
+}
+@mixin title-4-black {
+   font-size: 28px;
+   line-height: 36px;
+   color: $black;
+}
+@mixin title-5-black {
+   font-size: 24px;
+   line-height: 32px;
+   color: $black;
+}
+@mixin text-white {
+   color: $white;
+   font-size: 18px;
+   line-height: 32px;
+}
+@mixin text-black {
+   color: $dark-grey;
+   font-size: 18px;
+   line-height: 32px;/*28*/
+}
+@mixin text-grey {
+   color: $light-grey;
+   font-size: 18px;
+   line-height: 32px;
 }
