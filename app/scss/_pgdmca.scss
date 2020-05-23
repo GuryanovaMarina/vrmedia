@@ -1,0 +1,222 @@
+@import 'vars';
+.container.container-dmca {
+   max-width: 1300px;
+}
+.container.container-dmca-mini {
+  max-width: 900px;
+}
+.dmca {
+  @include bg__dark;
+  min-height: 100vh;
+  .dmca__outer {
+    @include bg__img;
+    @include title1-white;
+    padding-left: 45%;
+    background-image: url(../images/bg_image-dmca.svg);
+    background-repeat: no-repeat;
+    background-size: 35%;
+    background-position: 0 center;
+    @media (max-width: $screen-md-max) {
+      background-image: none;
+      padding-left: 0;
+    }
+    h1 {
+      text-align: left;
+      margin-bottom: 65px;
+      @media (max-width: $screen-lg-max) {
+        font-size: 55px;
+      }
+      @media (max-width: $screen-md-max) {
+        font-size: 50px;
+        line-height: 75px;
+        font-weight: 700;
+        height: auto;
+        padding-right: 0;
+        padding-left: 0;
+        margin-bottom: 60px;
+      }
+      @media (max-width: $screen-xs-max) {
+        margin-bottom: 30px;
+        font-size: 24px;
+        line-height: 38px;
+        font-weight: 400;
+      }
+    }
+    .text {
+      @include text-grey;
+      color: #bfc9da;
+      width: 80%;
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+    .dmca__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      @media (max-width: $screen-md-max) {
+        padding-top: 130px;
+        transform: inherit;
+      }
+      @media (max-width: $screen-xs-max) {
+        padding-top: 100px;
+      }
+      .dmca__subtitle {
+        color: #bfc9da;
+        font-size: 26px;
+        line-height: 32px;
+        font-style: italic;
+        margin-bottom: 30px;
+        background-image: none;
+        padding-left: 0;
+        @media (max-width: $screen-md-max) {
+          background-image: url(../images/bg_image-dmca.svg);
+          background-repeat: no-repeat;
+          background-position: left center;
+          background-size: 28% 100%;
+          padding-left: 158px;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        @media (max-width: $screen-xs-max) {
+          font-size: 15px;
+          line-height: 27px;
+          padding-left: 108px;
+        }
+      }
+    }
+  }
+}
+.instruction {
+  @include title2-black;
+  padding-top: 112px;
+  h2 {
+    margin-bottom: 30px;
+  }
+  .text {
+    @include text-black;
+    max-width: 716px;
+    width: 100%;
+  }
+  .instruction__inner {
+    margin-top: 45px;
+    .instruction__item {
+      background-color: #fff;
+      border-radius: 4px;
+      position: relative;
+      padding: 50px 40px;
+      & + .instruction__item{
+        margin-top: 10px;
+      }
+      @media (max-width: $screen-xs-max) {
+        padding: 20px;
+      }
+      .instruction__item__subtitle {
+        @include text-subtitle;
+        margin-bottom: 20px
+      }
+      .instruction__inner-box {
+        padding-left: 30px;
+        @media (max-width: $screen-xs-max) {
+          padding-left: 0;
+        }
+        & + .instruction__inner-box {
+          margin-top: 30px;
+        }
+        .instruction__text-bold {
+          @include text-big;
+          position: relative;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          &::before{
+            content: '';
+            width: 17px;
+            height: 2px;
+            background-color: #000;
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+          }
+        }
+        .text.text-grey,
+        .text.text-black,
+        .text.text-with-link {
+          margin-bottom: 20px;
+        }
+
+        .text.text-grey {
+          @include text-grey-panel;
+        }
+        .text.text-black {
+          @include text-black-panel;
+        }
+        .text.text-with-link {
+            @include text-black-panel;
+            .instruction__link-insert {
+              @include lnk__custom-border-pink;
+              border-bottom: 1px solid #ffffff;
+            }
+            &.text-with-link-max {
+              font-size: 24px;
+              line-height: 32px;
+              .instruction__link-insert {
+                font-size: 24px;
+                line-height: 32px;
+                @media (max-width: $screen-xs-max) {
+                  font-size: 18px;
+                }
+              }
+              @media (max-width: $screen-xs-max) {
+                font-size: 18px;
+              }
+          }
+        }
+        .instruction__wrapper-pink {
+          background-color: $pink-bg;
+          border-radius: 4px;
+          padding: 20px 30px;
+          & + .instruction__wrapper-pink {
+            margin-top: 10px;
+            margin-bottom: 30px;
+          }
+          .text.text-in-pink {
+            @include text-black;
+            color: #1c1c1c;
+          }
+        }
+      }
+      .instruction__link {
+        @include lnk__custom;
+        color: $pink;
+        margin: 20px 0;
+        &::after{
+          content: '..................................';
+          color: rgba($pink, .3);
+        }
+        &:hover {
+          &::after{
+            color: $pink;
+          }
+        }
+      }
+      .instruction__link-arrow {
+        width: 19px;
+        height: 19px;
+        background-image: url(../images/angle__link.svg);
+        position: absolute;
+        right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .instruction__help__wrapper {
+    margin-top: 50px;
+    margin-bottom: 60px;
+  }
+}

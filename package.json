@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Slavka",
+  "author": "MARYGURKA",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.7",

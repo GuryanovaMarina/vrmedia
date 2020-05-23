@@ -1,14 +1,54 @@
-/*Const colors*/
-$light-grey: #a8aab3; /*#9a9da2*/ /*!!ССЫЛКИ #667384*/
+/*variables colors*/
+$light-grey: #a8aab3;
 $dark-grey: #525252;
+$lnk-grey: #667384;
+$subtitle-grey: #9a9da2;
+$add-grey: #c9c4c6;
 $black: #1d2127;
 $white :#ffffff;
 $pink: #f03382;
+$pink-hover: #d71d6b;
 $pink-dark: #cf367f;
 $pink-bg: #ffe1e7;
 $grey-blue :#afbcd0;
+/*variables color background*/
+$bg-black: #121822;
+$bg-dark-grey: #171e29;
+$bg-med-grey: #f2f2f2;
+$bg-light-grey: #f2f2f2;
+$bg-blue-grey: #dbe1e9;
+/*variables @media*/
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
 
-/*Style text*/
+$screen-xs-max: 575px;
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
+$screen-xl-max: 1380px;
+
+/*STYLE BACKGROUND*/
+@mixin bg__img {
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-color: $bg-dark-grey;
+}
+@mixin bg__black {
+   background-color: $bg-black;
+}
+@mixin bg__dark {
+   background-color: $bg-dark-grey;
+}
+@mixin bg__light {
+   background-color: $bg-light-grey;
+}
+@mixin bg__lightblue {
+   background-color: $bg-blue-grey;
+}
+/*STYLE TEXT AND HEADER*/
 @mixin r400{
    font-family: 'Roboto', sans-serif;
    font-weight: 400;
@@ -17,63 +57,569 @@ $grey-blue :#afbcd0;
    font-family: 'Roboto', sans-serif;
    font-weight: 700;
 }
-@mixin title-white {
-   font-size: 50px;
-   line-height: 75px;
-   color: $white;
+@mixin title1-white {
+   h1 {
+      color: $white;
+   }
 }
-@mixin title-00-black {
-   font-size: 70px;
-   line-height: 75px;
-   color: $black;
+@mixin title1-black {
+   h1 {
+      color: $black;
+   }
 }
-@mixin title-0-black {
-   font-size: 60px;
-   line-height: 90px;
-   color: $black;
+@mixin title2-white {
+   h2 {
+      color: $white;
+   }
 }
-@mixin title-1-black {
-   font-size: 50px;
-   line-height: 75px;
-   color: $black;
+@mixin title2-black {
+   h2 {
+      color: $black;
+   }
 }
-@mixin title-white {
-   font-size: 30px;
-   line-height: 55px;
-   color: $white;
+@mixin title3-white {
+   h3 {
+      color: $white;
+   }
 }
-@mixin title-2-black {
-   font-size: 42px;
-   line-height: 56px;
-   color: $black;
+@mixin title3-black {
+   h3 {
+      color: $black;
+   }
 }
-@mixin title-3-black {
-   font-size: 36px;
-   line-height: 46px;
-   color: $black;
+@mixin title3-white-panel {
+   h3 {
+      font-size: 40px;
+      line-height: 55px;
+      color: $white;
+   }
 }
-@mixin title-4-black {
-   font-size: 28px;
-   line-height: 36px;
-   color: $black;
+@mixin title3-black-panel {
+   h3 {
+      font-size: 40px;
+      line-height: 55px;
+      color: $black;
+   }
 }
-@mixin title-5-black {
-   font-size: 24px;
+@mixin title4-white {
+   h4 {
+      color: $white;
+   }
+}
+@mixin title4-black {
+   h4 {
+      color: $black;
+   }
+}
+@mixin title4-white-underline {
+   h4 {
+      color: $white;
+      border-bottom: 2px solid $pink;
+      display: inline-block;
+      @media (max-width: $screen-xs-max) {
+         border-bottom: none;
+      }
+   }
+}
+@mixin title5-white {
+   h5 {
+      color: $white;
+   }
+}
+@mixin title5-black {
+   h5 {
+      color: $black;
+   }
+}
+@mixin title5-black-underline {
+   h5 {
+      color: $black;
+      border-bottom: 2px solid $pink;
+      display: inline-block;
+      @media (max-width: $screen-xs-max) {
+         border-bottom: none;
+      }
+   }
+}
+@mixin title6-white {
+   h6 {
+      color: $white;
+   }
+}
+@mixin title6-black {
+   h6 {
+      color: $black;
+   }
+}
+@mixin text {
+   font-size: 18px;
    line-height: 32px;
+   @media (max-width: $screen-sm-max) {
+      font-size: 16px;
+      line-height: 28px;
+   }
+}
+@mixin text-panel {
+   font-size: 18px;
+   line-height: 28px;
+   @media (max-width: $screen-sm-max) {
+      font-size: 16px;
+      line-height: 26px;
+   }
+}
+@mixin text-big {
    color: $black;
+   font-size: 20px;
+   line-height: 32px;
+   @media (max-width: $screen-sm-max) {
+      font-size: 18px;
+      line-height: 26px;
+   }
 }
 @mixin text-white {
+   @include text;
    color: $white;
-   font-size: 18px;
-   line-height: 32px;
 }
 @mixin text-black {
+   @include text;
    color: $dark-grey;
-   font-size: 18px;
-   line-height: 32px;/*28*/
 }
 @mixin text-grey {
+   @include text;
    color: $light-grey;
-   font-size: 18px;
-   line-height: 32px;
 }
+@mixin text-white-panel {
+   @include text-panel;
+   color: $white;
+}
+@mixin text-black-panel {
+   @include text-panel;
+   color: $dark-grey;
+}
+@mixin text-grey-panel {
+   @include text-panel;
+   color: $light-grey;
+}
+@mixin text-ital {
+   color: #1f242d;
+   font-size: 19px;
+   line-height: 32px;
+   font-style: italic;
+   @media (max-width: $screen-sm-max) {
+      font-size: 16px;
+      line-height: 28px;
+   }
+}
+@mixin text-subtitle {
+   color: $light-grey;
+   font-size: 16px;
+   line-height: 20px;
+}
+@mixin text-mini { //!!!!!!!!!!должен быть подчеркнут типа ссылки
+   color: $black;
+   font-size: 14px;
+   line-height: 28px;
+}
+/*STYLE BUTTON*/
+@mixin btn__custom {
+   color: $white;
+   height: 60px;
+   background-color: $pink;
+   border-radius: 6px;
+   padding: 0 60px 0 30px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   transition: all .2s;
+   &:hover {
+      background-color: $pink-hover;
+   }
+   &::after {
+      content: '';
+      background-image: url(../images/angle-right.svg);
+      width: 13px;
+      height: 12px;
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 26px;
+   }
+}
+@mixin btn__custom__arrow-move {
+   color: $white;
+   height: 60px;
+   background-color: $pink;
+   border-radius: 6px;
+   padding: 0 60px 0 30px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   transition: all .2s;
+   &:hover {
+      background-color: $pink-hover;
+      span{
+         &::after{
+            right: -30px;
+         }
+      }
+   }
+   span {
+      position: relative;
+      &::after {
+         content: '';
+         -webkit-transition: all .3s;
+         transition: all .3s;
+         position: absolute;
+         background-image: url(../images/angle-right.png);
+         width: 13px;
+         height: 12px;
+         background-repeat: no-repeat;
+         right: -25px;
+         top: 45%;
+         -webkit-transform: translateY(-40%);
+         transform: translateY(-40%);
+      }
+   }
+
+}
+/*STYLE LINK*/
+@mixin lnk__custom {
+   font-size: 18px;
+   line-height: 28px;
+   display: inline-block;
+   position: relative;
+   overflow: hidden;
+   &::after{
+      content: '';
+      letter-spacing: 1px;
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      font-size: 15px;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+   }
+   @media (max-width: $screen-sm-max) {
+      font-size: 16px;
+      line-height: 28px;
+   }
+}
+@mixin lnk__custom-border {
+   color: $lnk-grey;
+   font-size: 18px;
+   line-height: 28px;
+   display: inline-block;
+   border-bottom: 1px solid rgba($lnk-grey, .3);
+   transition: all .2s;
+   &:hover{
+      border-bottom: 1px solid rgba($lnk-grey, 1);
+   }
+   @media (max-width: $screen-sm-max) {
+      font-size: 16px;
+      line-height: 28px;
+   }
+}
+@mixin lnk__custom-border-pink {
+   color: $pink;
+   font-size: 18px;
+   line-height: 28px;
+   border-bottom: 1px solid rgba($pink, .3);
+   transition: all .2s;
+   &:hover{
+      color: $pink-dark;
+      border-bottom: 1px solid rgba($pink, 1);
+   }
+   @media (max-width: $screen-sm-max) {
+      font-size: 16px;
+      line-height: 28px;
+   }
+}
+@mixin lnk__custom-border-grey-pink {
+   font-size: 18px;
+   line-height: 28px;
+   color: $black;
+   border-bottom: 1px solid rgba($black, .2);
+   transition: all .2s;
+   &:hover{
+      color: $pink;
+      border-bottom: 1px solid rgba($pink, .2);
+   }
+}
+@mixin lnk__custom-border-darkbg {
+   display: inline-block;
+   color: #667384;
+   font-size: 18px;
+   line-height: 25px;
+   position: relative;
+   -webkit-transition: all .3s;
+   transition: all .3s;
+   &:hover {
+      color: #fff;
+   }
+   &::after {
+      content: '.............................';
+      position: absolute;
+      color: #667384;
+      letter-spacing: 1px;
+      left: 0;
+      bottom: -7px;
+   }
+}
+@mixin lnk__custom-darkbg {
+   color: $lnk-grey;
+   display: inline-block;
+   font-size: 18px;
+   line-height: 25px;
+   border-bottom: 1px solid rgba(#667384, .2);
+   -webkit-transition: all .3s;
+   transition: all .3s;
+   &:hover {
+      color: #fff;
+      border-bottom: 1px solid #fff;
+   }
+}
+/*STYLE REPEAT BLOCK*/
+@mixin panel__type1 {
+   h1 {
+      margin-bottom: 50px;
+   }
+   h4,h5 {
+      margin-bottom: 30px;
+   }
+   @media (max-width: $screen-lg-max) {
+      padding: 80px 0;
+   }
+   @media (max-width: $screen-xs-max) {
+      padding: 40px 0;
+   }
+   .row {
+      @media (max-width: $screen-sm-max) {
+         flex-direction: column;
+         .col + .col {
+            margin-top: 40px;
+         }
+      }
+   }
+   h4,h5 {
+      @media (max-width: $screen-xs-max) {
+         border: none;
+         font-size: 16px;
+         font-weight: 600;
+         color: $subtitle-grey;
+         margin-bottom: 15px;
+      }
+   }
+}
+@mixin panel__type2 {
+   @include title3-black;
+   h2,h3,h4,h5 {
+      margin-bottom: 40px;
+      @media (max-width: $screen-sm-max) {
+         margin-bottom: 0;
+         margin-left: 25px;
+      }
+   }
+   .text {
+      @include text-black;
+      margin-right: 40px;
+      @media (max-width: $screen-sm-max) {
+         margin-top: 20px;
+         margin-right: 0 ;
+      }
+   }
+   .block-pict_text__inner {
+      margin: 0 auto;
+      .row {
+         justify-content: center;
+         align-items: center;
+         @media (max-width: $screen-sm-max) {
+            flex-direction: column;
+         }
+         &+ .row {
+            .block-pict_text__description_outer {
+               margin-right: 50px;
+               @media (max-width: $screen-md-max) {
+                  margin-right: 0;
+               }
+               @media (max-width: $screen-sm-max) {
+                  order: 1;
+               }
+            }
+         }
+         .block-pict_text__description {
+            @media (max-width: $screen-sm-max) {
+               display: flex;
+               align-items: center;
+            }
+            .block-pict_text__img-mini {
+               display: none;
+               @media (max-width: $screen-sm-max) {
+                  display: block;
+                  height: 120px;
+                  img {
+                     height: 100%;
+                     object-fit: contain;
+                  }
+               }
+            }
+         }
+         .block-pict_text__img {
+            margin: 30px;
+            img {
+               height: 100%;
+               object-fit: contain;
+            }
+            @media (max-width: $screen-sm-max) {
+               display: none;
+            }
+         }
+         .block-pict_text__link {
+            @include lnk__custom-border-pink;
+            //color: $pink;
+            //border-bottom: 1px solid rgba($pink, .2);
+            //-webkit-transition: all .2s;
+            //transition: all .2s;
+            //&:hover {
+            //   border-bottom: 1px solid rgba($pink, 1);
+            //}
+         }
+      }
+   }
+}
+@mixin panel__type3 {
+   .block__twi {
+      text-align: center;
+      margin-bottom: 100px;
+      @media (max-width: $screen-md-max) {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         margin-bottom: 50px;
+      }
+      @media (max-width: $screen-xs-max) {
+         margin-bottom: 0;
+      }
+      h4 {
+         color: $black;
+         @media (max-width: $screen-sm-max) {
+            margin-left: 20px;
+            text-align: left;
+         }
+      }
+      .block__twi__img-mini {
+         display: none;
+         @media (max-width: $screen-sm-max) {
+            display: block;
+            height: 150px;
+            img {
+               height: 100%;
+               object-fit: contain;
+            }
+         }
+         @media (max-width: $screen-xs-max) {
+            height: 100px;
+         }
+      }
+   }
+   .block__twi__inner {
+      display: flex;
+      max-width: 1100px;
+      justify-content: space-between;
+      margin: 0 auto;
+      .block__twi__img-max {
+         height: 320px;
+         align-self: center;
+         @media (max-width: $screen-md-max) {
+            height: 220px;
+         }
+         @media (max-width: $screen-sm-max) {
+            display: none;
+         }
+         img {
+            height: 100%;
+            object-fit: contain;
+         }
+      }
+   }
+}
+@mixin panel__block {
+   @include title4-white;
+   background-image: url(../images/help__bg.svg);
+   background-position: right center;
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-color: $bg-dark-grey;
+   border-radius: 6px;
+   margin-bottom: 120px;
+   overflow: hidden;
+   box-shadow: 0 10px 37px rgba(0, 0, 0, 0.32);
+   max-width: 1100px;
+   @media (max-width: $screen-xs-max) {
+      background-image: none;
+   }
+   .block-send__step {
+      color: $subtitle-grey;
+      margin-bottom: 30px;
+      font-size: 16px;
+   }
+   h4 {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      @media (min-width: $screen-xl-max) {
+         font-size: 40px;
+         line-height: 55px;
+      }
+   }
+   .block-send__help-link {
+      @include btn__custom__arrow-move;
+      .visible {
+         display: block;
+         @media (max-width: $screen-xs-max) {
+            display: none;
+         }
+      }
+      .hide {
+         display: none;
+         @media (max-width: $screen-xs-max) {
+            display: block;
+         }
+      }
+   }
+   .text {
+      @include text-white-panel;
+      margin-bottom: 40px;
+      max-width: 800px;
+   }
+}
+@mixin panel__block-send {
+   @include panel__block;
+}
+@mixin panel__block-help {
+   @include panel__block;
+   padding: 40px 40px 50px;
+   width: auto;
+   @media (max-width: $screen-xs-max) {
+      padding: 30px;
+   }
+   .text {
+      max-width: 800px;
+      &.text-displ-mobile {
+         display: none;
+         @media (max-width: $screen-xs-max) {
+            display: block;
+         }
+      }
+      &.text-hide-mobile {
+         display: block;
+         @media (max-width: $screen-xs-max) {
+            display: none;
+         }
+      }
+   }
+}
+

@@ -1,0 +1,469 @@
+@import 'vars';
+
+/********СТАРТОВАЯ СТРАНИЦА*********/
+/*СЕКЦИЯ ПЕРВАЯ */
+.main {
+  @include bg__img;
+  @include title1-white;
+  height: 100vh;
+  background-image: url(../images/header_bg.jpg);
+  @media (max-width: 450px) {
+    background-image: url(../images/bg_mobile.jpg);
+  }
+  .main__title-wrap {
+    height: 85vh;
+    align-items: center;
+    .main__title {
+      h1 {
+        font-size: 90px;
+        line-height: 120px;
+      }
+      margin: 0 auto;
+      @media (max-width: 991px) {
+        h1 {
+          @include r700
+        }
+      }
+    }
+  }
+  /*КНОПКА ПОДРОБНЕЕ НА ГЛАВНОЙ*/
+  .header__details {
+    @include text-white;
+    position: absolute;
+    bottom: 10%;
+    display: inline-block;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    &:hover{
+      color: $lnk-grey;
+      &::after{
+        background-image: url(../images/arrow_grey.svg);
+      }
+    }
+    &::after{
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      content: '';
+      background-image: url(../images/angle_down.svg);
+      width: 12px;
+      height: 13px;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: -25px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
+}
+/*СЕКЦИЯ ЧТО ЭТО*/
+.about__what {
+  padding: 110px 0;
+  @media (max-width: $screen-lg-max) {
+    padding: 80px 0;
+  }
+  @media (max-width: $screen-xs-max) {
+    padding: 40px 0;
+  }
+  .block-pict_text {
+    @include panel__type2;
+    .block-pict_text__inner {
+      max-width: 1100px;
+      .row {
+        .block-pict_text__img {
+          height: 270px;
+          @media (max-width: $screen-sm-max) {
+            height: 180px;
+          }
+          @media (max-width: $screen-xs-max) {
+            height: 130px;
+          }
+        }
+      }
+    }
+  }
+}
+/*СЕКЦИЯ ЗАРАБОТАЙ НА МЕЧТУ*/
+.about__earn {
+  @include title3-black;
+  @include title5-black-underline;
+  @include text-black;
+  background-color: #ffffff;
+  padding: 150px 0;
+  h5 {
+    margin: 25px 0;
+  }
+  @media (max-width: $screen-xs-max) {
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 1px 14px rgba(0,0,0,0.07);
+  }
+  @include panel__type1;
+}
+/*СЕКЦИЯ ЧТО НУЖНО ДЛЯ РАБОТЫ*/
+.requirement {
+  @include bg__img;
+  @include title1-white;
+  @include title5-white;
+  @include text-grey;
+  padding: 170px 0;
+  @media (max-width: $screen-md-max) {
+    padding: 80px 0;
+  }
+  @media (max-width: $screen-xs-max) {
+    padding: 40px 0;
+  }
+  background-image: url(../images/bg.png);
+  background-size: 84% 100%;
+  background-position: 50% center;
+  @media (max-width: $screen-xs-max) {
+    background-image: none;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 150px;
+    @media (max-width: $screen-md-max) {
+      margin-bottom: 100px;
+    }
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: 60px;
+    }
+  }
+  h5 {
+    margin-bottom: 28px;
+    @media (max-width: $screen-xs-max) {
+      margin-left: 120px;
+    }
+  }
+  .text {
+   // @include text;
+   // color: $light-grey;
+  }
+  .requirement__inner {
+    :nth-child(even) {
+      justify-content: flex-end;
+      @media (max-width: $screen-md-max) {
+        justify-content: center;
+      }
+    }
+    :nth-child(odd) {
+      justify-content: flex-start;
+      @media (max-width: $screen-md-max) {
+        justify-content: center;
+      }
+    }
+    .row {
+      position: relative;
+      @media (max-width: $screen-xs-max) {
+        padding: 30px 0;
+      }
+      &+.row {
+        padding: 30px 0;
+        @media (max-width: $screen-md-max) {
+          padding: 70px 0;
+        }
+        @media (max-width: $screen-xs-max) {
+          padding: 30px 0;
+          border-top: 1px solid #2d3036;
+        }
+      }
+    }
+  }
+  .requirement__img {
+    height: 200px;
+    text-align: center;
+    @media (max-width: $screen-md-max) {
+      order: 1;
+      height: 150px;
+    }
+    @media (max-width: $screen-xs-max) {
+      position: absolute;
+      /*top: 0;*/
+      left: 0;
+      height: 80px;
+    }
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .requirement__description {
+    margin-left: 40px;
+    @media (max-width: $screen-xs-max) {
+      flex-basis: 100%;
+      margin-top: 50px;
+      margin-left: 0;
+    }
+  }
+  .requirement__examples {
+    @include lnk__custom-border-darkbg;
+    margin-top: 50px;
+    @media (max-width: $screen-xs-max) {
+      margin-top: 15px;
+      text-align: left;
+      display: block;
+    }
+  }
+}
+/*СЕКЦИЯ СОТРУДНИЧЕСТВО*/
+.cooperation {
+  @include bg__black;
+  @include title1-white;
+  @include title4-white-underline;
+  @include text-white;
+  padding: 140px 0 170px;
+  h1 {
+    @media (max-width: $screen-xs-max) {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: $pink-dark;
+        width: 40px;
+        height: 2px;
+        left: 0;
+        bottom: -10px;
+      }
+    }
+  }
+  @include panel__type1;
+  .text {
+    margin-bottom: 40px;
+    @media (max-width: $screen-xs-max) {
+      margin-bottom: 25px;
+    }
+  }
+  .cooperation__details {
+    @include lnk__custom-darkbg;
+  }
+}
+/*СЕКЦИЯ СОТРУДНИЧЕСТВО-2*/
+.get {
+  padding: 100px 0;
+  @include title1-black;
+  @include text-white;
+  h1 {
+    @media (min-width: $screen-xl-max) {
+      font-size: 60px;
+    }
+    @media (max-width: $screen-xl-max) {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    @media (max-width: $screen-sm-max) {
+      text-align: left;
+      margin-bottom: 35px;
+    }
+  }
+  .row {
+    align-items: center;
+    @media (max-width: $screen-xl-max) {
+      flex-direction: column;
+    }
+  }
+  .get__content {
+    display: flex;
+    @media (max-width: $screen-sm-max) {
+      flex-direction: column;
+    }
+    .get__item {
+      .text {
+        @include text-white
+      }
+      background-color: $bg-dark-grey;
+      min-height: 400px;
+      max-width: 386px;
+      width: 100%;
+      position: relative;
+      border-radius: 6px;
+      padding: 40px 33px 80px;
+      &+ .get__item {
+        margin-left: 20px;
+        @media (max-width: $screen-sm-max) {
+          margin-left: 0;
+          margin-top: 30px;
+        }
+      }
+      .get__subtitle {
+        @include text-subtitle;
+        @media (max-width: $screen-sm-max) {
+          margin-bottom: 50px;
+        }
+      }
+      .get__link {
+        @include btn__custom__arrow-move;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+}
+/*СЕКЦИЯ САЙТЫ ПАРТНЕРОВ*/
+.others {
+  padding: 100px 0 140px;
+  @include title1-black;
+  .others__title {
+    margin-bottom: 74px;
+  }
+  .others__inner {
+    display: flex;
+    flex-wrap: wrap;
+    .others__item {
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      height: 250px;
+      margin: 0.5%;
+      flex-basis: 23.5%;
+      &.big {
+        flex-basis: 48%;
+      }
+      @media (max-width: $screen-lg-max) {
+        flex-basis: 31%;
+        &.big {
+          flex-basis: 31%;
+        }
+      }
+      @media (max-width: $screen-md-max) {
+        background-size: 70%;
+      }
+      @media (max-width: $screen-sm-max) {
+        flex-basis: 49%;
+        &.big {
+          flex-basis: 99.5%;
+        }
+      }
+      @media (max-width: $screen-xs-max) {
+        height: 130px;
+      }
+    }
+    .logo_1{
+      background-image: url(../images/logo_1.png);
+    }
+    .logo_2{
+      background-image: url(../images/logo_2.png);
+    }
+    .logo_3{
+      background-image: url(../images/logo_3.png);
+    }
+    .logo_4{
+      background-image: url(../images/logo_4.png);
+    }
+    .logo_5{
+      background-image: url(../images/logo_5.png);
+    }
+    .logo_6{
+      background-image: url(../images/logo_6.png);
+    }
+  }
+  .others__details-wrapper {
+    margin: 80px auto 0;
+    text-align: center;
+    .others__details {
+      @include lnk__custom-border-grey-pink;
+    }
+  }
+}
+/*СЕКЦИЯ ИСТОРИЯ УСПЕХА*/
+.success {
+  @include bg__img;
+  @include title3-white;
+  @include title4-white;
+  @include text-grey;
+  padding: 190px 0 240px 0;
+  @media (max-width: $screen-md-max) {
+    background-image: none;
+    padding: 100px 0 180px 0;
+    text-align: center;
+  }
+  @media (max-width: $screen-xs-max) {
+    text-align: left;
+  }
+  h3 {
+    margin-bottom: 60px;
+    @media (max-width: $screen-md-max) {
+      margin-bottom: 20px;
+    }
+  }
+  h4 {
+    color: $pink;
+    margin-bottom: 15px;
+  }
+  background-image: url(../images/bg.png);
+  .success__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $screen-md-max) {
+      flex-direction: column;
+    }
+    .success__left {
+      max-width: 420px;
+      @media (max-width: $screen-md-max) {
+        margin-bottom: 50px;
+      }
+    }
+    .success__content {
+      display: flex;
+      flex-wrap: wrap;
+      @media (max-width: $screen-md-max) {
+        flex-direction: column;
+      }
+      .text {
+        color: $add-grey;
+      }
+      .success__item {
+        flex-basis: 48%;
+        margin-bottom: 100px;
+        margin-right: 2%;
+        @media (max-width: $screen-xl-max) {
+          flex-basis: 100%;
+          margin-bottom: 40px;
+          margin-right: 0;
+        }
+        @media (max-width: $screen-md-max) {
+          max-width: 400px;
+        }
+        .text {
+          @media (max-width: $screen-md-max) {
+            font-weight: 500;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+/*CЕКЦИЯ ОТПРАВИТЬ ЗАЯВКУ*/
+.request {
+  background-image: url(../images/bg_aeroplane_white.png);
+  position: relative;
+  height: 280px;
+  .block-send__inner {
+    @include panel__block-send;
+    background-image: url(../images/bg_aeroplane_black.png);
+    padding: 40px 90px 50px;
+    @media (max-width: $screen-xs-max) {
+      padding: 30px;
+    }
+    position: absolute;
+    margin: auto;
+    right: 20px;
+    left: 20px;
+    top: -140px;
+    width: auto;
+    max-width: 840px;
+    height: 360px;
+    .text {
+      width: 50%;
+      @media (max-width: $screen-sm-max) {
+        width: 100%;
+      }
+    }
+  }
+}

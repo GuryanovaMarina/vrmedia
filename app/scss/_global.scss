@@ -3,13 +3,13 @@ html,
 body {
     height: 100%;
 }
-.wrapper {
+/*.wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-}
+}*/
 .content {
-    flex: 1 0 auto;
+ //   flex: 1 0 auto;
 }
 .footer {
     flex: 0 0 auto;
@@ -22,75 +22,71 @@ html{
 *::after{
     box-sizing: inherit;
 }
-body{
-    color: #fff;
+body {
+    color: $black;
     @include r400;
+    background-color: $bg-light-grey;
 }
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
     margin: 0;
     font-weight: 400;
 }
-p{
+
+p {
     margin: 0;
 }
+/*
 .container{
     max-width: 1640px;
     width: 100%;
     padding: 0 20px;
     margin: 0 auto;
-}
-.container-news__top{
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-.container-typical,
-.container-news,
-.container-model{
-    max-width: 940px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-.container-model-big{
-    max-width: 1163px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-.text{
-    font-size: 18px;
-    line-height: 32px;
-}
-.title-3{
-    font-size: 50px;
-    line-height: 55px;
-}
-.title-6{
-    font-size: 24px;
-    line-height: 25px;
-}
-.title-5{
-    font-size: 30px;
-    line-height: 55px;
-    border-bottom: 2px solid #f03382;
-    display: inline-block;
-}
-.studio__title{
-    color: #1d2127;
-    font-size: 42px;
-    line-height: 50px;
-}
-.studio__text{
-    color: #525252;
-    font-size: 18px;
-    line-height: 32.01px;
-}
+}*/
+//.container-news__top{
+//    max-width: 1200px;
+//    width: 100%;
+//    margin: 0 auto;
+//    padding: 0 20px;
+//}
+//.container-model-big{
+//    max-width: 1163px;
+//    width: 100%;
+//    margin: 0 auto;
+//    padding: 0 20px;
+//}
+//.text{
+//    font-size: 18px;
+//    line-height: 32px;
+//}
+//.title-3{
+//    font-size: 50px;
+//    line-height: 55px;
+//}
+//.title-6{
+//    font-size: 24px;
+//    line-height: 25px;
+//}
+//.title-5{
+//    font-size: 30px;
+//    line-height: 55px;
+//    border-bottom: 2px solid #f03382;
+//    display: inline-block;
+//}
+//.studio__title{
+//    color: #1d2127;
+//    font-size: 42px;
+//    line-height: 50px;
+//}
+//.studio__text{
+//    color: #525252;
+//    font-size: 18px;
+//    line-height: 32.01px;
+//}
 .franchise-container{
     width: 100%;
     padding: 0 200px 0 150px;
