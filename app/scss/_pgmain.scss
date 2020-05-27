@@ -19,9 +19,12 @@
         line-height: 120px;
       }
       margin: 0 auto;
-      @media (max-width: 991px) {
+      @media (max-width: $screen-md-max) {
         h1 {
+          font-size: 50px;
+          line-height: 55px;
           @include r700
+
         }
       }
     }
@@ -66,18 +69,22 @@
   @media (max-width: $screen-xs-max) {
     padding: 40px 0;
   }
+
+  @include panel__type2;
   .block-pict_text {
-    @include panel__type2;
     .block-pict_text__inner {
       max-width: 1100px;
       .row {
+        .block-pict_text__description {
+          align-items: flex-end;
+        }
         .block-pict_text__img {
-          height: 270px;
+          height: 240px;
           @media (max-width: $screen-sm-max) {
             height: 180px;
           }
           @media (max-width: $screen-xs-max) {
-            height: 130px;
+            height: 150px;
           }
         }
       }
@@ -86,11 +93,23 @@
 }
 /*СЕКЦИЯ ЗАРАБОТАЙ НА МЕЧТУ*/
 .about__earn {
-  @include title3-black;
+  @include title2-black;
   @include title5-black-underline;
   @include text-black;
   background-color: #ffffff;
   padding: 150px 0;
+  h2 {
+    font-size: 50px;
+    line-height: 65px;
+    @media (max-width: $screen-md-max) {
+      font-size: 45px;
+      line-height: 50px;
+    }
+    @media (max-width: $screen-xs-max) {
+      font-size: 26px;
+      line-height: 39px;
+    }
+  }
   h5 {
     margin: 25px 0;
   }
@@ -99,11 +118,16 @@
     box-shadow: 0 1px 14px rgba(0,0,0,0.07);
   }
   @include panel__type1;
+  .text-pink {
+    color: $pink-dark;
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 /*СЕКЦИЯ ЧТО НУЖНО ДЛЯ РАБОТЫ*/
 .requirement {
   @include bg__img;
-  @include title1-white;
+  @include title2-white;
   @include title5-white;
   @include text-grey;
   padding: 170px 0;
@@ -119,14 +143,31 @@
   @media (max-width: $screen-xs-max) {
     background-image: none;
   }
-  h1 {
+  h2 {
+    font-size: 50px;
+    line-height: 65px;
     text-align: center;
     margin-bottom: 150px;
     @media (max-width: $screen-md-max) {
       margin-bottom: 100px;
+      font-size: 45px;
+      line-height: 50px;
     }
     @media (max-width: $screen-xs-max) {
+      font-size: 26px;
+      line-height: 39px;
+      text-align: left;
       margin-bottom: 60px;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: $pink-dark;
+        width: 40px;
+        height: 2px;
+        left: 0;
+        bottom: -10px;
+      }
     }
   }
   h5 {
@@ -212,8 +253,16 @@
   @include title4-white-underline;
   @include text-white;
   padding: 140px 0 170px;
-  h1 {
+  h2 {
+    font-size: 50px;
+    line-height: 65px;
+    @media (max-width: $screen-md-max) {
+      font-size: 45px;
+      line-height: 50px;
+    }
     @media (max-width: $screen-xs-max) {
+      font-size: 26px;
+      line-height: 39px;
       position: relative;
       &::after {
         content: '';
@@ -239,30 +288,39 @@
 }
 /*СЕКЦИЯ СОТРУДНИЧЕСТВО-2*/
 .get {
+  @include bg__light;
   padding: 100px 0;
-  @include title1-black;
+  @include title2-black;
   @include text-white;
-  h1 {
-    @media (min-width: $screen-xl-max) {
+  h2 {
       font-size: 60px;
-    }
+      line-height: 90px;
     @media (max-width: $screen-xl-max) {
-      margin-bottom: 50px;
+      font-size: 45px;
+      line-height: 50px;
       text-align: center;
-    }
-    @media (max-width: $screen-sm-max) {
-      text-align: left;
       margin-bottom: 35px;
+    }
+    @media (max-width: $screen-md-max) {
+      text-align: left;
+    }
+    @media (max-width: $screen-xs-max) {
+      font-size: 26px;
+      line-height: 39px;
     }
   }
   .row {
     align-items: center;
+    flex-wrap: wrap;
     @media (max-width: $screen-xl-max) {
-      flex-direction: column;
+
     }
   }
   .get__content {
     display: flex;
+   // flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     @media (max-width: $screen-sm-max) {
       flex-direction: column;
     }
@@ -305,9 +363,20 @@
 /*СЕКЦИЯ САЙТЫ ПАРТНЕРОВ*/
 .others {
   padding: 100px 0 140px;
-  @include title1-black;
-  .others__title {
+  @include title2-black;
+  h2 {
+    font-size: 50px;
+    line-height: 65px;
     margin-bottom: 74px;
+    margin-left: 0.5%;
+    @media (max-width: $screen-md-max) {
+      font-size: 45px;
+      line-height: 50px;
+    }
+    @media (max-width: $screen-xs-max) {
+      font-size: 26px;
+      line-height: 39px;
+    }
   }
   .others__inner {
     display: flex;
@@ -400,11 +469,14 @@
     justify-content: space-between;
     align-items: center;
     @media (max-width: $screen-md-max) {
-      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      //flex-direction: column;
     }
     .success__left {
       max-width: 420px;
       @media (max-width: $screen-md-max) {
+        max-width: 720px;
         margin-bottom: 50px;
       }
     }
@@ -412,7 +484,9 @@
       display: flex;
       flex-wrap: wrap;
       @media (max-width: $screen-md-max) {
-        flex-direction: column;
+        //flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
       }
       .text {
         color: $add-grey;
@@ -444,25 +518,33 @@
   background-image: url(../images/bg_aeroplane_white.png);
   position: relative;
   height: 280px;
-  .block-send__inner {
-    @include panel__block-send;
-    background-image: url(../images/bg_aeroplane_black.png);
-    padding: 40px 90px 50px;
-    @media (max-width: $screen-xs-max) {
-      padding: 30px;
-    }
+  .block-send__inner__wrapper {
+    //position: relative;
+    //bottom: 240px;
     position: absolute;
-    margin: auto;
-    right: 20px;
-    left: 20px;
-    top: -140px;
-    width: auto;
-    max-width: 840px;
-    height: 360px;
-    .text {
-      width: 50%;
-      @media (max-width: $screen-sm-max) {
-        width: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -150px;
+
+    .block-send__inner {
+      @include panel__block-send;
+      background-image: url(../images/bg_aeroplane_black.png);
+      background-position: 150% 10%;
+      background-size: inherit;
+      padding: 40px 90px 50px;
+      @media (max-width: $screen-xs-max) {
+        padding: 30px;
+      }
+      margin: 0 auto;
+      width: auto;
+      max-width: 840px;
+      height: 360px;
+      .text {
+        width: 50%;
+        @media (max-width: $screen-sm-max) {
+          width: 100%;
+        }
       }
     }
   }

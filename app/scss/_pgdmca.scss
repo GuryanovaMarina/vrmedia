@@ -7,7 +7,7 @@
 }
 .dmca {
   @include bg__dark;
-  min-height: 100vh;
+  height: 100vh;
   .dmca__outer {
     @include bg__img;
     @include title1-white;
@@ -54,7 +54,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-height: 100vh;
+      height: 100vh;
       @media (max-width: $screen-md-max) {
         padding-top: 130px;
         transform: inherit;
@@ -73,8 +73,8 @@
         @media (max-width: $screen-md-max) {
           background-image: url(../images/bg_image-dmca.svg);
           background-repeat: no-repeat;
-          background-position: left center;
-          background-size: 28% 100%;
+          background-position: 50px center;
+          background-size: 98px auto;
           padding-left: 158px;
           height: 100px;
           display: flex;
@@ -85,6 +85,7 @@
           font-size: 15px;
           line-height: 27px;
           padding-left: 108px;
+          background-position: 0 center;
         }
       }
     }

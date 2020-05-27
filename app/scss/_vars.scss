@@ -352,7 +352,7 @@ $screen-xl-max: 1380px;
 }
 @mixin lnk__custom-border-darkbg {
    display: inline-block;
-   color: #667384;
+   color: $lnk-grey;
    font-size: 18px;
    line-height: 25px;
    position: relative;
@@ -364,7 +364,7 @@ $screen-xl-max: 1380px;
    &::after {
       content: '.............................';
       position: absolute;
-      color: #667384;
+      color: $lnk-grey;
       letter-spacing: 1px;
       left: 0;
       bottom: -7px;
@@ -375,7 +375,7 @@ $screen-xl-max: 1380px;
    display: inline-block;
    font-size: 18px;
    line-height: 25px;
-   border-bottom: 1px solid rgba(#667384, .2);
+   border-bottom: 1px solid rgba($lnk-grey, .2);
    -webkit-transition: all .3s;
    transition: all .3s;
    &:hover {
@@ -385,7 +385,7 @@ $screen-xl-max: 1380px;
 }
 /*STYLE REPEAT BLOCK*/
 @mixin panel__type1 {
-   h1 {
+   h2 {
       margin-bottom: 50px;
    }
    h4,h5 {
@@ -401,7 +401,7 @@ $screen-xl-max: 1380px;
       @media (max-width: $screen-sm-max) {
          flex-direction: column;
          .col + .col {
-            margin-top: 40px;
+            //margin-top: 40px;
          }
       }
    }
@@ -438,7 +438,7 @@ $screen-xl-max: 1380px;
          justify-content: center;
          align-items: center;
          @media (max-width: $screen-sm-max) {
-            flex-direction: column;
+            //flex-direction: column;
          }
          &+ .row {
             .block-pict_text__description_outer {
@@ -469,7 +469,7 @@ $screen-xl-max: 1380px;
             }
          }
          .block-pict_text__img {
-            margin: 30px;
+            padding: 30px;
             img {
                height: 100%;
                object-fit: contain;

@@ -1,14 +1,16 @@
 @import 'vars';
-@import '_pgmain';
-@import '_pgmodel';
-@import '_pgstudio';
-@import '_pgtechnical';
-@import '_pgdmca';
-
+@import 'pgmain';
+@import 'pgmodel';
+@import 'pgstudio';
+@import 'pgtechnical';
+@import 'pgdmca';
+@import 'pgnews';
+@import "footer";
+@import "remodal";
 .wrapper {
- /* display: flex;
-  flex-direction: column;*/
-  //min-height: 100vh;
+ //display: flex;
+ // flex-direction: column;
+ // min-height: 100%;
 }
 .container {
   max-width: 1640px;
@@ -19,7 +21,7 @@
 /*ЗАГОЛОВКИ*/
 h1 {
   font-size: 50px;
-  line-height: 75px;
+  line-height: 65px; //!!75
   @media (max-width: $screen-md-max) {
     font-size: 45px;
     line-height: 50px;
@@ -74,6 +76,18 @@ h5 {
 }
 /*СТИЛИ СПИСКОВ*/
 .text {
+  &.text-displ-mobile {
+    display: none;
+    @media (max-width: $screen-xs-max) {
+      display: block;
+    }
+  }
+  &.text-hide-mobile {
+    display: block;
+    @media (max-width: $screen-xs-max) {
+      display: none;
+    }
+  }
   ul {
     list-style: none;
     margin: 25px 0;
@@ -243,7 +257,7 @@ h5 {
 .col-1 {
   flex-basis: 8.33333333%;
 }
-@media (min-width: $screen-sm-min) {
+@media (min-width: 300px) {
   .col-xs-1,
   .col-xs-2,
   .col-xs-3,
@@ -614,7 +628,7 @@ h5 {
   @include text-white;
   align-items: center;
   z-index: 10;
-  padding: 10px 0;
+  padding: 10px;
   position: fixed;
   left: 0;
   right: 0;
@@ -660,6 +674,8 @@ h5 {
   }
   .header__menu-list {
     text-align: right;
+    padding: 0;
+    margin: 0;
     &.active{
       left: 0;
     }
@@ -683,7 +699,7 @@ h5 {
       position: relative;
       text-align: left;
       cursor: pointer;
-      padding: 15px 20px 15px 0;
+      padding: 22px 20px 22px 0;
       -webkit-transition: all .3s;
       transition: all .3s;
       @media (min-width: $screen-xl-min) {

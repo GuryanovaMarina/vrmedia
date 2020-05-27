@@ -8,9 +8,16 @@ $(window).on('load', function () {
          preloader.addClass('hide')
       }
    }, 3200)
-})
+});
+
+
+
 
 $(function () {
+   //page news
+   $('.news__tag__item').on('click', function () {
+      $(this).toggleClass('active');
+   });
 
    if($('.franchise__wrapper').length)
    {
@@ -157,7 +164,7 @@ $(function () {
    })
 
    $('.header__details').on('click', function () {
-      var offset = $('.about').offset().top;
+      var offset = $('.about__what').offset().top;
       $('html, body').animate({
          scrollTop: offset
       }, 700)
@@ -206,31 +213,31 @@ $(function () {
    //    });
    // }
 
-   if ($('.header__top').hasClass('header__other-page')) {
-      $(window).on('scroll', function () {
-         var offset = 150;
-         var html = $('html').scrollTop();
-         if (offset <= html) {
-            $('.header__top').addClass('active');
-            $('.header__top').removeClass('active-static');
-         }
-         else {
-            $('.header__top').removeClass('active');
-            $('.header__top').addClass('active-static');
-         }
-      });
-   } else {
-      $(window).on('scroll', function () {
-         var offset = 150;
-         var html = $('html').scrollTop();
-         if (offset <= html) {
-            $('.header__top').addClass('active');
-         }
-         else {
-            $('.header__top').removeClass('active');
-         }
-      });
-   }
+   // if ($('.header__top').hasClass('header__other-page')) {
+   //    $(window).on('scroll', function () {
+   //       var offset = 150;
+   //       var html = $('html').scrollTop();
+   //       if (offset <= html) {
+   //          $('.header__top').addClass('active');
+   //          $('.header__top').removeClass('active-static');
+   //       }
+   //       else {
+   //          $('.header__top').removeClass('active');
+   //          $('.header__top').addClass('active-static');
+   //       }
+   //    });
+   // } else {
+   //    $(window).on('scroll', function () {
+   //       var offset = 150;
+   //       var html = $('html').scrollTop();
+   //       if (offset <= html) {
+   //          $('.header__top').addClass('active');
+   //       }
+   //       else {
+   //          $('.header__top').removeClass('active');
+   //       }
+   //    });
+   // }
 
 
    $('.news__more').on('click', function () {
@@ -261,19 +268,19 @@ $(function () {
 
    $("#lightgallery").lightGallery();
 
-   $('.verification__inner .tab').on('click', function (event) {
-      var id = $(this).attr('data-id');
-      $('.verification__inner').find('.tab-item').removeClass('active-tab').hide();
-      $('.verification__inner .tabs').find('.tab').removeClass('active');
-      $(this).addClass('active');
-      $('#' + id).addClass('active-tab').fadeIn();
-      return false;
-   });
-
-   $('.verification__inner.verification-mobile .tab').on('click', function () {
-      $(this).toggleClass('active-mobile');
-      $(this).next().toggleClass('show');
-   });
+   // $('.verification__inner .tab').on('click', function (event) {
+   //    var id = $(this).attr('data-id');
+   //    $('.verification__inner').find('.tab-item').removeClass('active-tab').hide();
+   //    $('.verification__inner .tabs').find('.tab').removeClass('active');
+   //    $(this).addClass('active');
+   //    $('#' + id).addClass('active-tab').fadeIn();
+   //    return false;
+   // });
+   //
+   // $('.verification__inner.verification-mobile .tab').on('click', function () {
+   //    $(this).toggleClass('active-mobile');
+   //    $(this).next().toggleClass('show');
+   // });
 
    $('.create__item-1 .tab').on('click', function (event) {
       var id = $(this).attr('data-id');
@@ -605,6 +612,14 @@ $(function () {
    $('#form__text').focus(function () {
       $(this).prev().addClass('active');
    });
+
+   $('#form__problem').focus(function () {
+      $(this).prev().addClass('active');
+   });
+
+
+
+
    $('#form__name').not('.franchise__form #form__name').focusout(function () {
       if ($(this).val() == '') {
          $('.form__block.name').addClass('active');

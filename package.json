@@ -23,6 +23,7 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "enquire.js": "^2.1.6",
+    "jquery": "^3.5.1",
     "lg-autoplay": "^1.0.4",
     "lg-fullscreen": "^1.1.0",
     "lg-hash": "^1.0.4",
